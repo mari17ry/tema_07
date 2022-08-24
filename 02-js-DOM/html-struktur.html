@@ -28,12 +28,17 @@
         text-align: center;
       }
     </style>
+
+    <!-- ___________________________________________________________ -->
   </head>
   <body>
     <header><h1>ARTIKEL TITEL</h1></header>
 
     <main>
       <h2>Undertitel til artiklerne</h2>
+
+      <div id="info"></div>
+
       <section>
         <article>
           <img src="/02-js-DOM/orange bord concept 1.png" alt="concept 1" />
@@ -42,13 +47,33 @@
         </article>
 
         <article>
-          <img src="/02-js-DOM/stue orange moodboard.png" alt="moodboard" />
+          <img src="/02-js-DOM/stue orange moodboard.png" id="billede2" alt="moodboard" />
           <h3>Artikel 2</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsam sunt, id exercitationem optio quod iusto dolore deleniti nobis, sint aliquam culpa fugiat non soluta nostrum incidunt, recusandae cupiditate? Minus!</p>
         </article>
       </section>
     </main>
 
-    <footer>marie isaksen tema 07 2022</footer>
+    <footer id="footertekst">marie isaksen tema 07 2022</footer>
+
+    <!-- ______________________________________________________________ -->
+
+    <script>
+      const footertekst = document.querySelector("#footertekst");
+
+      console.log(footertekst);
+
+      footertekst.textContent = "test på ny footertekst";
+      //   eller
+      //     footertekst.innerHTML = "<h1> noget nyt igen igen </h1>"; --virker!
+
+      const billede = document.querySelector("#billede2");
+      //   skriver jeg bare 'img' er det første img-tag, der ændres. her har jeg valgt id'en til 2.billede
+      billede.src = "https://placeimg.com/640/480/animals";
+      billede.alt = "dette er ny alt tekst";
+
+      let info = document.querySelector("#info");
+      info.innerHTML = "<h1>min overskrift som at der nu var at der var til info</h1><img src='https://placeimg.com/640/480/animals'>";
+    </script>
   </body>
 </html>
