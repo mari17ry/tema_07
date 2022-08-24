@@ -47,7 +47,7 @@
         </article>
 
         <article>
-          <img src="https://placeimg.com/640/480/any" id="billede2" alt="moodboard" />
+          <img src="https://placeimg.com/640/480/animals" id="billede2" alt="moodboard" />
           <h3>Artikel 2</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsam sunt, id exercitationem optio quod iusto dolore deleniti nobis, sint aliquam culpa fugiat non soluta nostrum incidunt, recusandae cupiditate? Minus!</p>
         </article>
@@ -59,21 +59,31 @@
     <!-- ______________________________________________________________ -->
 
     <script>
-      const footertekst = document.querySelector("#footertekst");
+      const titel = document.querySelector("h1");
+      console.log(titel);
+      titel.textContent = "ny titel hehe";
 
-      console.log(footertekst);
+      let undertitel = document.querySelector("h2");
+      console.log(undertitel);
+      undertitel.textContent = "nyt shit her";
 
-      footertekst.textContent = "test på ny footertekst";
-      //   eller
-      //     footertekst.innerHTML = "<h1> noget nyt igen igen </h1>"; --virker!
+      // SÅ HVAD ER FORSKELLEN PÅ LET OG CONST??
 
-      const billede = document.querySelector("#billede2");
-      //   skriver jeg bare 'img' er det første img-tag, der ændres. her har jeg valgt id'en til 2.billede
-      billede.src = "https://placeimg.com/640/480/animals";
-      billede.alt = "dette er ny alt tekst";
+      const artikel2h3 = document.querySelector("article:nth-child(2) h3");
+      const artikel1p = document.querySelector("article:nth-child(1) p");
+      let artikel2p = document.querySelector("article:nth-child(2) p");
 
-      let info = document.querySelector("#info");
-      info.innerHTML = "<h1>min overskrift som at der nu var at der var til info</h1><img src='https://placeimg.com/640/480/nature'>";
+      artikel2h3.textContent = "så var det, at der var ny overskrift her";
+      artikel1p.textContent = "her prøver jeg at skrive ny t4kst for artikel ets paragraf! ";
+      artikel2p.innerHTML = "<p> her ændrer jeg skrift via innerHTML, jeg ved ikke hvad frorskellen umiddelbart er...</p>";
+
+      // ---------------------------------------------------------------------
+
+      // billede.src = "https://placeimg.com/640/480/animals";
+      // billede.alt = "dette er ny alt tekst";
+
+      // let info = document.querySelector("#info");
+      // info.innerHTML = "<h1>min overskrift som at der nu var at der var til info</h1><img src='https://placeimg.com/640/480/nature'>";
     </script>
   </body>
 </html>
