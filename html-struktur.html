@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Øvelse HTML 5</title>
+
+    <style>
+      section {
+        display: flex;
+        width: 50%;
+      }
+      section article {
+        border: solid;
+        border-color: black;
+        border-width: 1px;
+
+        margin: 30px;
+      }
+
+      section img {
+        width: 40vw;
+      }
+
+      footer {
+        width: 100%;
+        text-align: center;
+      }
+    </style>
+
+    <!-- ___________________________________________________________ -->
+  </head>
+  <body>
+    <header><h1>ARTIKEL TITEL</h1></header>
+
+    <main>
+      <h2>Undertitel til artiklerne</h2>
+
+      <div id="info"></div>
+
+      <section>
+        <article>
+          <img src="https://placeimg.com/640/480/any" alt="concept 1" />
+          <h3>Artikel 1</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus ullam qui at ut adipisci fuga! Quis non animi modi! Ipsam earum illum temporibus dicta quis quia voluptatibus dolorum omnis eveniet.</p>
+        </article>
+
+        <article>
+          <img src="https://placeimg.com/640/480/any" id="billede2" alt="moodboard" />
+          <h3>Artikel 2</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ipsam sunt, id exercitationem optio quod iusto dolore deleniti nobis, sint aliquam culpa fugiat non soluta nostrum incidunt, recusandae cupiditate? Minus!</p>
+        </article>
+      </section>
+    </main>
+
+    <footer id="footertekst">marie isaksen tema 07 2022</footer>
+
+    <!-- ______________________________________________________________ -->
+
+    <script>
+      const footertekst = document.querySelector("#footertekst");
+
+      console.log(footertekst);
+
+      footertekst.textContent = "test på ny footertekst";
+      //   eller
+      //     footertekst.innerHTML = "<h1> noget nyt igen igen </h1>"; --virker!
+
+      const billede = document.querySelector("#billede2");
+      //   skriver jeg bare 'img' er det første img-tag, der ændres. her har jeg valgt id'en til 2.billede
+      billede.src = "https://placeimg.com/640/480/animals";
+      billede.alt = "dette er ny alt tekst";
+
+      let info = document.querySelector("#info");
+      info.innerHTML = "<h1>min overskrift som at der nu var at der var til info</h1><img src='https://placeimg.com/640/480/nature'>";
+    </script>
+  </body>
+</html>
