@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dyr øvelse 6</title>
+
+    <!-- <style>
+      .dyrinfo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    </style> -->
+    <!-- mit html looper ikke her, måske derfor .dyrinfo kun findes i én, og ikke kan sættes i grid? -->
+    <!-- ja, det, der looper er det der nth-child show.  -->
+  </head>
+  <body>
+    <main>
+      <section class="data-container"></section>
+      <template>
+        <article class="dyrinfo">
+          <h3></h3>
+          <img src="" alt="" />
+          <p>Type:</p>
+          <p>Levested:</p>
+        </article>
+      </template>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", visDyr);
+      let dyr = [
+        { navn: "gris", type: "pattedyr", billede: "http://mabe-kea.dk/E19/pics/pig.png", levested: "svinefarm" },
+        { navn: "frø", type: "snaskedreng", billede: "http://mabe-kea.dk/E19/pics/frog.png", levested: "hvor der er vådt" },
+        { navn: "ræv", type: "pattedyr", billede: "http://mabe-kea.dk/E19/pics/fox.png", levested: "i naturen og byer" },
+        { navn: "sild", type: "fisk", billede: "http://mabe-kea.dk/E19/pics/sild.jpg", levested: "vand" },
+        { navn: "krokodille", type: "dino", billede: "http://mabe-kea.dk/E19/pics/kroko.jpg", levested: "sumpet og varmt" },
+      ];
+
+      function visDyr() {
+        const container = document.querySelector(".data-container");
+        const dyrTemplate = document.querySelector("template");
+        // sætter dyrlisten igennem (let) og sætter data ind i template, der kan loopes
+        dyr.forEach((dyrene) => {
+          // her definerer vi at hver nøglepar hedder 'dyrene' så vi kan sige fx 'navn' eller 'levested' på dem alle, men hver for sig.
+          let klon = dyrTemplate.cloneNode(true).content;
+          // ny variabel til at styre alle klonerne
+          klon.querySelector("h3").textContent = dyrene.navn;
+          // klon.querySelector("img").
+          klon.querySelector("p:nth-child(3)").textContent = dyrene.type;
+          klon.querySelector("p:nth-child(4)").textContent = dyrene.levested;
+          container.appendChild(klon);
+        });
+      }
+
+      // const dyrType = document.querySelector(".dyrinfo");
+      // console.log(dyr);
+
+      // function start() {
+      //   dyr.forEach((dyr) => {
+      //     dyrType.innerHTML += `<h3>${dyr.navn}</h3> som er <p:nth-child(3)>${dyr.type}</p> og lever <p:nth-child(4)>${dyr.levested}</p>`;
+      //     dyrType.innerHTML += `<img src=${dyr.billede}>`;
+      //   });
+      // }
+    </script>
+  </body>
+
+  <!-- <script src="04-dyriarray.js"></script> -->
+</html>

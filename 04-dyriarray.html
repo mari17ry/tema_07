@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dyr øvelse 1</title>
+  </head>
+  <body>
+    <main>
+      <!-- article (og andre tags, der skal duplikeres i loop view) skal helst være class og ikke id, da sektionen bliver duplikeret/loopet - id skal der kun være én af! -->
+      <article class="dyrinfo">
+        <h3></h3>
+        <img src="" alt="" />
+        <p>Type:</p>
+        <p>Levested:</p>
+      </article>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", start);
+      let dyr = [
+        { navn: "gris", type: "pattedyr", billede: "http://mabe-kea.dk/E19/pics/pig.png", levested: "svinefarm" },
+        { navn: "frø", type: "snaskedreng", billede: "http://mabe-kea.dk/E19/pics/frog.png", levested: "hvor der er vådt" },
+        { navn: "ræv", type: "pattedyr", billede: "http://mabe-kea.dk/E19/pics/fox.png", levested: "i naturen og byer" },
+        { navn: "sild", type: "fisk", billede: "http://mabe-kea.dk/E19/pics/sild.jpg", levested: "vand" },
+        { navn: "krokodille", type: "dino", billede: "http://mabe-kea.dk/E19/pics/kroko.jpg", levested: "sumpet og varmt" },
+      ];
+
+      const dyrType = document.querySelector(".dyrinfo");
+      console.log(dyr);
+
+      function start() {
+        dyr.forEach((dyr) => {
+          dyrType.innerHTML += `<h3>${dyr.navn}</h3> som er <p:nth-child(3)>${dyr.type}</p> og lever <p:nth-child(4)>${dyr.levested}</p>`;
+
+          // og ser sådan ud ${dyr.billede}
+          // destination.querySelector("img").src = dyr.billede;
+          dyrType.innerHTML += `<img src=${dyr.billede}>`;
+        });
+      }
+    </script>
+  </body>
+
+  <!-- <script src="04-dyriarray.js"></script> -->
+</html>
