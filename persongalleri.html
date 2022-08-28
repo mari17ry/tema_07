@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persongalleri</title>
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      article {
+        margin: 20px;
+        padding: 30px;
+        border: 10px;
+        border-color: saddlebrown;
+        border-style: dotted;
+        background-color: bisque;
+        text-align: center;
+      }
+
+      h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: saddlebrown;
+      }
+
+      img {
+        width: 50%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main></main>
+
+    <template>
+      <article>
+        <img src="" alt="" class="billede" />
+        <h2 class="navn"></h2>
+        <p class="titel">Job/beskæftigelse:</p>
+        <p class="hobby">Hobby:</p>
+        <p class="troende">Religiøse orientering:</p>
+        <p class="fødselsdag">Fødselsdato:</p>
+      </article>
+    </template>
+
+    <script>
+      const url = "https://persongalleri-5d3e.restdb.io/rest/persongalleri";
+
+      const options = {
+        headers: {
+          "x-apikey": "600fe9211346a1524ff12e31",
+        },
+      };
+
+      async function hentData() {
+        const svar = await fetch(url, options);
+        const jsondata = await svar.json();
+        vis(jsondata);
+      }
+
+      const main = document.querySelector("main");
+      // main skal defineres, ellers error. Men der er ikke noget i den? Hvorfor er den vigtig her?
+      const template = document.querySelector("template").content;
+
+      function vis(jsondata) {
+        console.log(jsondata);
+        jsondata.forEach((person) => {
+          const klon = template.cloneNode(true);
+          klon.querySelector(".billede").src += person.billede;
+          klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
+          klon.querySelector(".titel").textContent += " " + person.titel;
+          klon.querySelector(".hobby").textContent += " " + person.hobby;
+          klon.querySelector(".troende").textContent += " " + person.troende;
+          klon.querySelector(".fødselsdag").textContent += " " + person.fødselsdag;
+          main.appendChild(klon);
+        });
+      }
+
+      hentData();
+      // det er den her, der får dataen til at dukke op i loggen. Tror også det er det alan har snakket om
+      // at vi/han ofte glemmer at skrive. Uden den kommando kan dataen ikke blive bedt om at komme frem!
+
+      // hentData(url); skal der stå noget i den ? lginer det ikke i slides.
+    </script>
+  </body>
+</html>
