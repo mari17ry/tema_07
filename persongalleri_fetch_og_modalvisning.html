@@ -27,7 +27,7 @@
       }
 
       img {
-        width: 50%;
+        width: 70%;
       }
 
       #popop {
@@ -52,12 +52,12 @@
   </head>
 
   <body>
+    <h1>Alle</h1>
     <nav>
-      <h1></h1>
       <button data-tro="alle" class="valgt">Alle</button>
       <button data-tro="ja" class="">Troende</button>
       <button data-tro="nej" class="">Ikke troende</button>
-      <button data-tro="i tvivl" class="">i tvivl</button>
+      <button data-tro="tvivler" class="">i tvivl</button>
     </nav>
 
     <section id="holder"></section>
@@ -98,6 +98,7 @@
 
       function filtrerPersoner() {
         filter = this.dataset.tro;
+        document.querySelector("h1").textContent = this.textContent;
         document.querySelector(".valgt").classList.remove("valgt");
         this.classList.add("valgt");
         // console.log(filter);
@@ -123,7 +124,7 @@
             const klon = template.cloneNode(true);
             klon.querySelector("article").addEventListener("click", () => visDetaljer(person));
             // heroppe defineres visDetaljers parantes, kan senere kaldes noget andet ikke-prædefineret i visDetaljers egen funktion.
-            klon.querySelector(".billede").src += person.billede;
+            klon.querySelector(".billede").src = person.billede;
             klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
             // klon.querySelector(".titel").textContent += " " + person.titel;
             // klon.querySelector(".hobby").textContent += " " + person.hobby;
