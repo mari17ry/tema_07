@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bistro Babushka - forside</title>
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet" />
+    <style>
+
+      @media (min-width:1025px) { 
+        body {
+        background-color: #f2f2ed;
+      }
+
+      header {
+        border: grey;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        padding-bottom: 10px;
+      }
+
+      nav {
+        display: flex;
+      }
+
+      nav button {
+        text-decoration: none;
+        font-family: arial;
+        color: black;
+        background-color: #f2f2ed;
+        border: none;
+        font-size: 13px;
+        margin-left: 30px;
+      }
+
+      button:hover {
+        color: grey;
+      }
+
+      .logolink {
+        font-family: "Staatliches", cursive;
+        text-decoration: none;
+        font-size: 50px;
+        color: black;
+        float: left;
+        margin-right: 200px;
+      }
+
+      .logolink:hover {
+        color: grey;
+      }
+
+      p {
+        font-family: courier;
+      }
+
+      h1 {
+        font-family: "Staatliches", cursive;
+        font-size: 80px;
+        margin-bottom: 0px;
+      }
+
+      h3 {
+        font-family: "Staatliches", cursive;
+        font-size: 23px;
+        float: right;
+      }
+
+      h2{
+        font-family: "Staatliches", cursive;
+        font-size: 30px;
+        margin: 30px;
+      }
+
+      .columnforside {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 30px 30px 100px 30px;
+        gap: 70px;
+      }
+
+      .forsidebillede {
+        width: 100%; 
+      }
+
+      .tekstforside p {
+        margin: 120px 60px 0px 60px;
+      }
+
+      #holder {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      article {
+        margin: 2px;
+        padding: 2px;
+      }
+
+      article img {
+        width: 100%;
+      }
+
+      article h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+      }
+
+      #popup {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        /* ellers er popup'en der fra load */
+        align-items: center;
+        justify-content: center;
+      }
+
+      #popup article {
+        width: 60%;
+        background-color: white;
+      }
+
+      #popup img {
+        width: 60%;
+        float: right;
+        margin: 30px;
+      }
+
+      #popup h2 {
+        margin-top: 40px;
+        margin-left: 40px;
+        font-family: "Staatliches", cursive;
+        font-size: 40px;
+      }
+
+      #popup p {
+        margin-top: 40px;
+        margin-left: 40px;
+      }
+
+      #pris {
+        color: grey;
+        float: right;
+        padding-top: 200px;
+        font-family: "Staatliches", cursive;
+        font-size: 20px;
+      }
+
+      footer{
+        background-color: tan;
+        font-family: "Staatliches", cursive;
+        font-size: 20px;
+        display: flex;
+        justify-content:center;
+       
+      
+        padding: 100px 100px 20px 100px;
+         /* ret shit her, få det nedi bunden lol */
+      }
+       }
+
+       /* tablet */
+       @media only screen and (max-width: 1024px){
+       
+
+        body {
+        background-color: #f2f2ed;
+      }
+
+      header {
+        border: grey;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        padding-bottom: 10px;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+       
+      }
+
+      nav button {
+        text-decoration: none;
+        font-family: arial;
+        color: black;
+        background-color: #f2f2ed;
+        border: none;
+        font-size: 20px;
+        margin-top: 5px;
+      }
+
+      button:hover {
+        color: grey;
+      }
+
+      .logolink {
+        font-family: "Staatliches", cursive;
+        text-decoration: none;
+        font-size: 40px;
+        color: black;
+        float: left;
+        
+      }
+
+      .logolink:hover {
+        color: grey;
+      }
+
+      p {
+        font-family: courier;
+        font-size: 13px;
+      }
+
+      h1 {
+        font-family: "Staatliches", cursive;
+        font-size: 40px;
+        margin-bottom: 0px;
+      }
+
+      h3 {
+        font-family: "Staatliches", cursive;
+        font-size: 23px;
+        float: right;
+      }
+
+      h2{
+        font-family: "Staatliches", cursive;
+        font-size: 20px;
+        margin: 30px;
+      }
+
+      .columnforside {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .forsidebillede {
+        width: 100%; 
+      }
+
+      .tekstforside p {
+       font-size: 13px;
+      }
+
+      #holder {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      article {
+        margin: 2px;
+        padding: 2px;
+      }
+
+      article img {
+        width: 100%;
+      }
+
+      article h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+      }
+
+      #popup {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        /* ellers er popup'en der fra load */
+        align-items: center;
+        justify-content: center;
+      }
+
+      #popup article {
+        width: 60%;
+        background-color: white;
+      }
+
+      #popup img {
+        width: 80%;
+        margin: 30px;
+        margin-bottom: 10px;
+      }
+
+      #popup h2 {
+        margin: 20px;
+        font-family: "Staatliches", cursive;
+        font-size: 40px;
+      }
+
+      #popup p {
+        margin: 10px;
+        
+      }
+
+      #pris {
+        color: grey;
+        float: right;
+        padding-top: 20px;
+        font-family: "Staatliches", cursive;
+        font-size: 20px;
+      }
+
+      footer{
+        background-color: tan;
+        font-family: "Staatliches", cursive;
+        font-size: 20px;
+        display: flex;
+        justify-content:center;
+       
+      
+        padding: 100px 100px 20px 100px;
+        
+      }
+       }
+
+
+
+       /* mobil */
+       @media only screen and (max-width: 480px){
+       
+
+        body {
+        background-color: #f2f2ed;
+      }
+
+      header {
+        border: grey;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        padding-bottom: 10px;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+       
+      }
+
+      nav button {
+        text-decoration: none;
+        font-family: arial;
+        color: black;
+        background-color: #f2f2ed;
+        border: none;
+        font-size: 20px;
+        margin-top: 5px;
+      }
+
+      button:hover {
+        color: grey;
+      }
+
+      .logolink {
+        font-family: "Staatliches", cursive;
+        text-decoration: none;
+        font-size: 60px;
+        color: black;
+        float: left;
+        
+      }
+
+      .logolink:hover {
+        color: grey;
+      }
+
+      p {
+        font-family: courier;
+        font-size: 13px;
+      }
+
+      h1 {
+        font-family: "Staatliches", cursive;
+        font-size: 40px;
+        margin-bottom: 0px;
+      }
+
+      h3 {
+        font-family: "Staatliches", cursive;
+        font-size: 23px;
+        float: right;
+      }
+
+      h2{
+        font-family: "Staatliches", cursive;
+        font-size: 20px;
+        margin: 30px;
+      }
+
+      .columnforside {
+        display: grid;
+        grid-template-columns: 1fr ;
+      
+      }
+
+      .forsidebillede {
+        display: none;
+      }
+
+      .tekstforside p {
+       font-size: 13px;
+      }
+
+      #holder {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      article {
+        margin: 2px;
+        padding: 2px;
+      }
+
+      article img {
+        width: 100%;
+      }
+
+      article h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: black;
+      }
+
+      #popup {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        /* ellers er popup'en der fra load */
+        align-items: center;
+        justify-content: center;
+      }
+
+      #popup article {
+        width: 60%;
+        background-color: white;
+      }
+
+      #popup img {
+        width: 80%;
+        margin: 30px;
+        margin-bottom: 10px;
+      }
+
+      #popup h2 {
+        margin: 20px;
+        font-family: "Staatliches", cursive;
+        font-size: 40px;
+      }
+
+      #popup p {
+        margin: 10px;
+        
+      }
+
+      #pris {
+        color: grey;
+        float: right;
+        padding-top: 20px;
+        font-family: "Staatliches", cursive;
+        font-size: 20px;
+      }
+
+      footer{
+        background-color: tan;
+        font-family: "Staatliches", cursive;
+        font-size: 20px;
+        display: flex;
+        justify-content:center;
+       
+      
+        padding: 100px 100px 20px 100px;
+        }
+      }
+
+       
+      
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="index_modalversion.html" class="logolink">Bistro Babushka</a>
+
+        <button data-mad="alle" class="valgt">ALLE RETTER</button>
+        <button data-mad="forretter" class="">FORRETTER</button>
+        <button data-mad="hovedretter" class="">HOVEDRETTER</button>
+        <button data-mad="desserter" class="">DESSERTER</button>
+        <button data-mad="drikkevarer" class="">DRIKKEVARER</button>
+        <!-- <button data-mad="sideorders" class=""></button> -->
+      </nav>
+    </header>
+
+    <div class="columnforside">
+      <img src="russisktapas-md.jpg" alt="" class="forsidebillede" />
+      <div class="tekstforside">
+        <h1>Bistro Babushka</h1>
+        <h3>- Traditionelle og autentiske retter fra Rusland</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic maiores perspiciatis similique, obcaecati nostrum ex debitis eaque? Consequatur debitis reprehenderit ea perspiciatis hic eveniet voluptatem, quam animi voluptatum, vel iusto.</p>
+      </div>
+    </div>
+    <!-- --------------------- -->
+    <h2></h2>
+    <section id="holder"></section>
+
+    <template>
+      <article>
+        <img src="" alt="" class="billede" />
+        <h2 class="navn"></h2>
+        <p class="kortbeskrivelse"></p>
+        <p class="langbeskrivelse"></p>
+        <p class="oprindelsesregion"></p>
+        <p class="kategori"></p>
+        <p class="pris">Pris pr. ret:</p>
+      </article>
+    </template>
+
+    <div id="popup">
+      <article>
+        <img src="" alt=""/>
+        <h2></h2>
+        <p></p>
+        <p id="pris"></p>
+      </article>
+    </div>
+
+    <footer>Bistro Babushka 2022</footer>
+  </body>
+
+  <script>
+    const url = "https://babushka-dd8a.restdb.io/rest/menu";
+    const options = {
+      headers: {
+        "x-apikey": "600ec2fb1346a1524ff12de4",
+      },
+    };
+
+    let data;
+    let filter = "alle";
+
+    document.querySelectorAll("button").forEach((knap) => knap.addEventListener("click", filtrerRetter));
+
+    function filtrerRetter() {
+      filter = this.dataset.mad;
+      document.querySelector("h2").textContent = this.textContent;
+      document.querySelector(".valgt").classList.remove("valgt");
+      this.classList.add("valgt");
+      vis();
+    }
+
+    async function hentData() {
+      const svar = await fetch(url, options);
+      const json = await svar.json();
+      data = json;
+      console.log(data);
+      // behøves det her? kunne man ikke bare sige
+      // console.log(json);?
+      vis();
+    }
+
+    function vis() {
+      const holder = document.querySelector("#holder");
+      const template = document.querySelector("template").content;
+      holder.textContent = "";
+      data.forEach((ret) => {
+        console.log(filter);
+        if (filter == "alle" || filter == ret.kategori) {
+          const loop = template.cloneNode(true);
+          loop.querySelector("article").addEventListener("click", () => visDetaljer(ret));
+          loop.querySelector(".billede").src = ret.billednavn + "-md.jpg";
+          loop.querySelector(".navn").textContent = ret.navn;
+          loop.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
+          loop.querySelector(".pris").textContent += " " + ret.pris + " kr.";
+          holder.appendChild(loop);
+        }
+      });
+    }
+
+    document.querySelector("#popup").addEventListener("click", () => (popup.style.display = "none"));
+    // array loades ikke, hvis 'popup.style.display' ikke er der i string. Gør den, så 'none'/css'en loades? idk
+    // eller også gør den, så når der klikkes, at 'none' disregardes?
+    // 
+
+    function visDetaljer(retDetaljer) {
+      console.log("retDetaljer");
+      const popup = document.querySelector("#popup");
+      popup.style.display = "flex";
+      // popup vil ikke ske, hvis ovenstående ikke er skrevet. De to 'display.style' skal altså være der, før modalvisning virker. 
+      popup.querySelector("img").src = retDetaljer.billednavn + "-md.jpg";
+      popup.querySelector("h2").textContent = retDetaljer.navn;
+      popup.querySelector("p").textContent = retDetaljer.langbeskrivelse;
+      popup.querySelector("p+p").textContent = "Pris pr. ret: " + retDetaljer.pris + " kr.";
+    }
+
+    hentData();
+  </script>
+</html>
